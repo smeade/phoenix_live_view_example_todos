@@ -37,8 +37,18 @@
         </td>
       </tr>
     <% end %>
+    <tr class="footer">
+      <td colspan="2">
+        <span class="todo-count">
+        <strong><%= @count %></strong>
+        <%= Inflex.inflect("item", @count) %> left
+        </span>
+      </td>
+    </tr>
   </tbody>
 </table>
+
+
 
 <footer class="info">
   <p>Written by <a href="http://twitter.com/smeade">Scott Meade</a></p>

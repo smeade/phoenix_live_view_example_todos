@@ -16,7 +16,7 @@ defmodule DemoWeb.TodoLive.Index do
 
   defp fetch(socket) do
     assign(socket, %{
-      count: 0,
+      count: Enum.count(TodoList.list_active_todos()),
       todos: TodoList.list_todos(),
       changeset: TodoList.change_todo(%Todo{})
     })
