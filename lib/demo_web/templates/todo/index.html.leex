@@ -29,6 +29,9 @@
     </tr>
   </thead>
   <tbody>
+
+    <%= render "form.html", assigns %>
+
     <%= for todo <- @todos do %>
       <tr>
         <td><%= todo.completed %></td>

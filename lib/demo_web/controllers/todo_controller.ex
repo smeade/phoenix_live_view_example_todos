@@ -5,9 +5,11 @@ defmodule DemoWeb.TodoController do
   alias Demo.TodoList.Todo
 
   def index(conn, _params) do
+    changeset = TodoList.change_todo(%Todo{})
+
     conn
     |> put_view(DemoWeb.TodoIndexView)
-    |> render("index.html")
+    |> render("index.html", changeset: changeset)
   end
 
   def new(conn, _params) do

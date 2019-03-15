@@ -6,10 +6,6 @@
   <% end %>
 
   <%= label f, :title %>
-  <%= text_input f, :title %>
+  <%= text_input f, :title, autofocus: true %>
   <%= error_tag f, :title %>
-
-  <div>
-    <%= submit "Save", phx_disable_with: "Saving..." %>
-  </div>
 <% end %>
