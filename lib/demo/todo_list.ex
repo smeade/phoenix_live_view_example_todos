@@ -94,6 +94,26 @@ defmodule Demo.TodoList do
   end
 
   @doc """
+  Toggles completed status on a todo
+
+  ## Examples
+
+      iex> toggle_complete_todo(todo)
+      {:ok, %Todo{}}
+
+      iex> toggle_complete_todo(todo)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def toggle_complete_todo(%Todo{} = todo) do
+    todo
+    |> Todo.changeset(%{completed: !todo.completed})
+    |> Repo.update()
+    |> notify_subscribers([:todo, :updated])
+  end
+
+
+  @doc """
   Deletes a Todo.
 
   ## Examples

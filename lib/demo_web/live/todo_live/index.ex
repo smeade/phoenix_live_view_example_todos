@@ -39,7 +39,19 @@ defmodule DemoWeb.TodoLive.Index do
         {:noreply, fetch(socket)}
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        {:noreply, assign(socket, changeset: changeset)}
+        {:noreply, fetch(socket)}
+    end
+  end
+
+  def handle_event("toggle_complete_todo", id, socket) do
+    todo = TodoList.get_todo!(id)
+
+    case TodoList.toggle_complete_todo(todo) do
+      {:ok, todo} ->
+        {:noreply, fetch(socket)}
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {:noreply, fetch(socket)}
     end
   end
 end

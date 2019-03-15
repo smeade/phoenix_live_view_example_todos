@@ -5,7 +5,5 @@
     <!-- </div> -->
   <% end %>
 
-  <%= label f, :title %>
-  <%= text_input f, :title, autofocus: true %>
-  <%= error_tag f, :title %>
+  <%= text_input f, :title, autofocus: true, class: 'new-todo', placeholder: "What needs to be done?" %>
 <% end %>

@@ -1,6 +1,4 @@
-<header class="header">
-  <h1>Todos</h1>
-</header>
+<h2>Todos</h2>
 
 <%= if assigns[:online_users] do %>
   <table>
@@ -20,22 +18,20 @@
   </table>
 <% end %>
 
-<table>
+<table class="todo-list">
   <thead>
     <tr>
-      <th>Completed</th>
-      <th>Title</th>
-      <th></th>
+      <%= render "form.html", assigns %>
     </tr>
   </thead>
   <tbody>
-
-    <%= render "form.html", assigns %>
-
     <%= for todo <- @todos do %>
       <tr>
-        <td><%= todo.completed %></td>
-        <td><%= todo.title %></td>
+        <td>
+          <input phx-click="toggle_complete_todo" phx-value=<%= todo.id %>
+            name="todo[completed]" class="toggle" type="checkbox" <%= checked(todo) %>>
+          <label><%= todo.title %></label>
+        </td>
         <td>
         <%= link "", to: "#", phx_click: "delete_todo", phx_value: todo.id, class: "destroy" %>
         </td>
@@ -43,5 +39,3 @@
     <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Todo", to: Routes.live_path(@socket, TodoLive.New) %></span>
