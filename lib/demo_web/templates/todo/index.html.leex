@@ -26,7 +26,7 @@
   </thead>
   <tbody>
     <%= for todo <- @todos do %>
-      <tr>
+      <tr class="<%= completed_class(todo) %>">
         <td>
           <input phx-click="toggle_complete_todo" phx-value=<%= todo.id %>
             name="todo[completed]" class="toggle" type="checkbox" <%= checked(todo) %>>
