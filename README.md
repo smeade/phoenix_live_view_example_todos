@@ -1,3 +1,12 @@
+![](todos_demo.gif)
+
+# Live View Todos Example
+
+I took [Chris McCord's](https://github.com/chrismccord) [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example), and added a Todos demo. Based loosely on todo mvc, but completely server-side via Live View.
+
+After installing as instructed below, visit [`localhost:4000/todos`](http://localhost:4000/todos) from your browser.
+
+
 # Demo
 
 To start your Phoenix server:
