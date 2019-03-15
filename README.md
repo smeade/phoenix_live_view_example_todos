@@ -6,7 +6,7 @@ I took [Chris McCord's](https://github.com/chrismccord) [LiveView example repo](
 
 After installing as instructed below, visit [`localhost:4000/todos`](http://localhost:4000/todos) from your browser.
 
-Note that I wrote only the `todo_`-related code. The other examples are all from Chris's [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example) directly on top of which I stacked the `/todos` demo app.
+Note that I wrote only the `todo_`-related code. The other examples are all from Chris's [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example) directly on top of which I stacked the `/todos` demo code.
 
 # Demo
 
