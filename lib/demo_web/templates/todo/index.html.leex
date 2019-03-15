@@ -37,8 +37,7 @@
         <td><%= todo.completed %></td>
         <td><%= todo.title %></td>
         <td>
-        <%= link "Edit", to: Routes.live_path(@socket, TodoLive.Edit, todo) %>
-        <%= link "Delete", to: "#", phx_click: "delete_todo", phx_value: todo.id %>
+        <%= link "", to: "#", phx_click: "delete_todo", phx_value: todo.id, class: "destroy" %>
         </td>
       </tr>
     <% end %>

@@ -1,0 +1,21 @@
+.destroy {
+  visibility: hidden;
+  float: right;
+  color: #cc9a9a;
+  font-size: 1.6em;
+  margin: 0;
+  padding: 0;
+	transition: color 0.2s ease-out;
+}
+
+.destroy:hover {
+	color: #af5b5e;
+}
+
+.destroy:after {
+	content: '×';
+}
+
+tr:hover .destroy {
+	visibility: visible;
+}

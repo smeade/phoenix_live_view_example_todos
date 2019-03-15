@@ -18,3 +18,7 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+## Scratchpad
+
+  <%= link "Edit", to: Routes.live_path(@socket, TodoLive.Edit, todo) %>
