@@ -34,6 +34,12 @@ defmodule DemoWeb.Router do
     live "/users/:id", UserLive.Show
     live "/users/:id/edit", UserLive.Edit
 
+    live "/todos", TodoLive.Index
+    live "/todos/new", TodoLive.New
+    live "/todos/:id", TodoLive.Show
+    live "/todos/:id/edit", TodoLive.Edit
+
     resources "/plain/users", UserController
+    resources "/plain/todos", TodoController
   end
 end

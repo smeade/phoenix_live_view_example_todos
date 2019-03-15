@@ -3,9 +3,9 @@ defmodule DemoWeb.Endpoint do
 
   socket "/live", Phoenix.LiveView.Socket, websocket: true
 
-  socket "/socket", DemoWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  # socket "/socket", DemoWeb.UserSocket,
+  #   websocket: true,
+  #   longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #

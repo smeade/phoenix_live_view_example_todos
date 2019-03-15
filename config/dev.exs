@@ -70,8 +70,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :demo, Demo.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "phx",
+  password: "phx",
   database: "demo_dev",
   hostname: "localhost",
   pool_size: 10
