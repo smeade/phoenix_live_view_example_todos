@@ -2,7 +2,7 @@
 
 # Live View Todos Example
 
-[Chris McCord's](https://github.com/chrismccord) [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example) with a Todos demo (based on the Users CRUD demo). I created this in order to discover and learn about LiveView and take it for a test drive. The demo is based loosely on todo mvc, but completely server-side via LiveView.
+[Chris McCord's](https://github.com/chrismccord) [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example) with a Todos demo (based on the Users CRUD demo) added. I created the todos demo in order to discover and learn about LiveView and to take it for a test drive. The demo is based loosely on todo mvc, but completely server-side via LiveView.
 
 After installing as instructed below, visit [`localhost:4000/todos`](http://localhost:4000/todos) from your browser.
 
