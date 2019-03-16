@@ -1,11 +1,8 @@
 defmodule DemoWeb.TodoLive.Index do
   use Phoenix.LiveView
 
-  alias DemoWeb.TodoLive
-  alias DemoWeb.Router.Helpers, as: Routes
   alias Demo.TodoList
   alias DemoWeb.TodoView
-  alias Demo.TodoList.Todo
 
   def mount(_session, socket) do
     if connected?(socket), do: Demo.TodoList.subscribe()
@@ -18,12 +15,22 @@ defmodule DemoWeb.TodoLive.Index do
     assign(socket, %{
       count: Enum.count(TodoList.list_active_todos()),
       todos: TodoList.list_todos(),
-      changeset: TodoList.change_todo(%Todo{})
+      changeset: TodoList.change_todo(%Demo.TodoList.Todo{})
     })
   end
 
   def handle_info({TodoList, [:todo | _], _}, socket) do
     {:noreply, fetch(socket)}
+  end
+
+  def handle_event("save", %{"todo" => todo_params}, socket) do
+    case TodoList.create_todo(todo_params) do
+      {:ok, _todo} ->
+        {:noreply, fetch(socket)}
+
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {:noreply, fetch(socket)}
+    end
   end
 
   def handle_event("delete_todo", id, socket) do
@@ -33,25 +40,10 @@ defmodule DemoWeb.TodoLive.Index do
     {:noreply, socket}
   end
 
-  def handle_event("save", %{"todo" => todo_params}, socket) do
-    case TodoList.create_todo(todo_params) do
-      {:ok, todo} ->
-        {:noreply, fetch(socket)}
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        {:noreply, fetch(socket)}
-    end
-  end
-
   def handle_event("toggle_complete_todo", id, socket) do
     todo = TodoList.get_todo!(id)
+    {:ok, _todo} = TodoList.toggle_complete_todo(todo)
 
-    case TodoList.toggle_complete_todo(todo) do
-      {:ok, todo} ->
-        {:noreply, fetch(socket)}
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        {:noreply, fetch(socket)}
-    end
+    {:noreply, socket}
   end
 end
