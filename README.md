@@ -2,11 +2,13 @@
 
 # Live View Todos Example
 
-I took [Chris McCord's](https://github.com/chrismccord) [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example), and added a Todos demo. Based loosely on todo mvc, but completely server-side via Live View.
+[Chris McCord's](https://github.com/chrismccord) [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example) with a Todos demo (based on the Users CRUD demo). I created this in order to discover and learn about LiveView and take it for a test drive. The demo is based loosely on todo mvc, but completely server-side via LiveView.
 
 After installing as instructed below, visit [`localhost:4000/todos`](http://localhost:4000/todos) from your browser.
 
-Note that I wrote only the `todo_`-related code. The other examples are all from Chris's [LiveView example repo](https://github.com/chrismccord/phoenix_live_view_example) directly on top of which I stacked the `/todos` demo code.
+# Attributions
+  * The other examples are all Chris McCord's. I copied his Users CRUD example as a starting place for the `/todos` demo and wrote the `todo_`-related code on top of that. If I were to do it over, I would have forked that repo to make this history explicit.
+  * css from [TodoMVC](https://github.com/tastejs/todomvc).
 
 # Demo
 
@@ -28,7 +30,3 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
-
-## Scratchpad
-
-  <%= link "Edit", to: Routes.live_path(@socket, TodoLive.Edit, todo) %>
